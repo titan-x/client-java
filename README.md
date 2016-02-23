@@ -1,6 +1,6 @@
 # Titan Java Client
 
-[![Build Status](https://travis-ci.org/titan/client-java.svg?branch=master)](https://travis-ci.org/titan/client-java)
+[![Build Status](https://travis-ci.org/titan-x/client-java.svg?branch=master)](https://travis-ci.org/titan-x/client-java)
 
 Titan client implementation for Java. Also works on Android. Depends on [Neptulon Java client](https://github.com/neptulon/client-java). Requirements and dependencies for Neptulon Java client is listed on its own repo.
 
