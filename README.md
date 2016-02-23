@@ -7,20 +7,21 @@ Titan client implementation for Java. Also works on Android. Depends on [Neptulo
 ## Example
 
 ```java
-Conn conn = new ConnImpl("ws://127.0.0.1:3001");
-conn.middleware(new Logger());
-conn.connect();
-conn.sendRequest("hello", new EchoMessage("Hello from Java client!"), new ResHandler<Object>() {
-  @Override
-  public Class<Object> getType() {
-    return Object.class;
-  }
+Client client = new ClientImp("ws://127.0.0.1:3000");
+client.connect(new ConnCallback() { ... });
+client.jwtAuth(JWT_TOKEN, new JwtAuthCallback() {
+    @Override
+    public void success() {
+        System.out.println("JWT auth done");
+    }
 
-  @Override
-  public void handler(Response<Object> res) {
-    System.out.println("Received hello message response: " + res.result);
-  }
+    @Override
+    public void fail() {
+        System.out.println("JWT auth failed");
+    }
 });
+
+// now you can use `client.sendMessages(...)`
 ```
 
 ## Building
